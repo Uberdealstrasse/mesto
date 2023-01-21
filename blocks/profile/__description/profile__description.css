@@ -10,9 +10,8 @@
 
 @media screen and (max-width: 768px) {
   .profile__description {
-    margin: min(max(5px, calc((5/320*100)*1vw)), 8px) auto 0 ;
+    margin: min(max(5px, calc((5/320*100)*1vw)), 8px) auto 0;
     text-align: center;
-    
   }
 
 

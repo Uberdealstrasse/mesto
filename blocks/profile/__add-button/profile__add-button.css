@@ -2,9 +2,7 @@
   min-width: 120px;
   background: 0;
   padding: 0;
-  align-self: end;
   margin: 0 0 0 10px;
-  border: 0;
   height: 50px;
   width: 150px;
   align-self: center;
@@ -12,7 +10,6 @@
   border-radius: 3px; 
   color: white;
   line-height: 1;
-  
 }
 
 
@@ -21,7 +18,6 @@
     width: 282px;
     margin-top: 30px;
     margin-left: 0;
-    
   }
 
 
