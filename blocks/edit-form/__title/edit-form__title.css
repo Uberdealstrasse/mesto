@@ -1,0 +1,8 @@
+.edit-form__title {
+  margin: min(max(26px, calc((26/320*100)*1vw)), 35px) auto 0;
+  width: min(max(238px, calc((238/320*100)*1vw)), 358px);
+  font-size: min(max(18px, calc((18/320*100)*1vw)), 24px);
+  line-height: 1.2;
+  font-weight: 900;
+  
+}

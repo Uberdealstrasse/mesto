@@ -1,0 +1,23 @@
+.profile__description {
+  
+  margin: 8px auto 0 0;
+  font-size: min(max(14px, calc((14/320*100)*1vw)), 18px);
+  line-height: 22px;
+  font-weight: 400;
+  
+}
+
+
+@media screen and (max-width: 768px) {
+  .profile__description {
+    margin: min(max(5px, calc((5/320*100)*1vw)), 8px) auto 0 ;
+    text-align: center;
+    
+  }
+
+
+
+
+}
+
+

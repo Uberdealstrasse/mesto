@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="./pages/index.css" />
+		<link rel="stylesheet" href="./style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MESTO</title>
+	</head>
+
+	<body>
+		<div class="page dark-theme">
+			
+			<div class="popup-container hidden">
+				
+				<div class="edit-form">
+					<button class="edit-form__close hover"></button>
+					<h2 class="edit-form__title">Редактировать профиль</h2>
+					<input class="edit-form__input-name" type="text" value="Жак-Ив Кусто">
+					<input class="edit-form__input-description" type="text" value="Исследователь океана">
+					<input class="edit-form__submit" type="submit" value="Сохранить">
+				</div>
+			</div>
+
+
+			<!-- HEADER -->
+			<header class="header">
+				<img src="./images/logo.svg" alt="лого" class="header__logo"  />
+			</header>
+
+			<main class="content">
+				<!-- PROFILE -->
+				<section class="profile">
+					<img src="./images/avatar.png" alt="ваш аватар" class="profile__avatar">
+					<div class="profile__info">
+						<h1 class="profile__name">Жак-Ив Кусто</h1>
+						<button class="profile__edit-button hover"><img class="profile__image" src="./images/edit-button.png" alt="Кнопка «button»"></button>
+						<p class="profile__description">Исследователь океана</p>
+						
+					</div>
+					<button class="profile__add-button hover"><img class="profile__plus" src="./images/add-button.png" alt="Кнопка «button»"></button>
+
+
+				</section>
+
+				
+				<!-- ELEMENTS -->
+				<section class="elements" aria-label="фото-сетка">
+					<div class="element">
+						<img
+							src="./images/karachaevsk.jpg"
+							alt="Карачаевск"
+							class="element__image"
+						/>
+						<div class="element__info">
+							<h2 class="element__title">Карачаевск</h2>
+							<button  class="element__like-button hover"></button>
+							<!-- <button class="element__like-button hidden hover"><img class="like__img" src="./images/like-button-active.svg" alt="кнопка лайк" ></button> -->
+							
+						</div>
+						
+					</div>
+
+					<div class="element">
+						<img
+							src="./images/elbrus.jpg"
+							alt="Гора Эльбрус"
+							class="element__image"
+						/>
+						<div class="element__info">
+							<h2 class="element__title">Гора Эльбрус</h2>
+							<button  class="element__like-button hover"></button>
+						</div>
+					</div>
+
+					<div class="element">
+						<img
+							src="./images/dombai.jpg"
+							alt="Домбай"
+							class="element__image"
+						/>
+						<div class="element__info">
+							<h2 class="element__title">Домбай</h2>
+							<button class="element__like-button hover "></button>
+						</div>
+					</div>
+
+					<div class="element">
+						<img
+							src="./images/elbrus.jpg"
+							alt="Гора Эльбрус"
+							class="element__image"
+						/>
+						<div class="element__info">
+							<h2 class="element__title">Гора Эльбрус</h2>
+							<button class="element__like-button hover"></button>
+						</div>
+					</div>
+
+					<div class="element">
+						<img
+							src="./images/dombai.jpg"
+							alt="Домбай"
+							class="element__image"
+						/>
+						<div class="element__info">
+							<h2 class="element__title">Домбай</h2>
+							<button class="element__like-button hover"></button>
+						</div>
+					</div>
+
+					<div class="element">
+						<img
+							src="./images/karachaevsk.jpg"
+							alt="Карачаевск"
+							class="element__image"
+						/>
+						<div class="element__info">
+							<h2 class="element__title">Карачаево-Черкесия</h2>
+							<button class="element__like-button hover"></button>
+						</div>
+					</div>
+
+					
+					
+				</section>
+
+				
+
+			<!-- FOOTER -->
+			<footer class="footer">
+					<p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+				
+			</footer>
+		</div>
+
+
+
+		<script src="./script.js"></script>
+	</body>
+</html>

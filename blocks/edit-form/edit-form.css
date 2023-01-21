@@ -1,0 +1,14 @@
+.edit-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  
+  
+  width: min(max(282px, calc((282/320*100)*1vw)), 430px);
+  height: min(max(322px, calc((322/320*100)*1vw)), 330px);
+  margin: min(max(123px, calc((123/320*100)*1vw)), 195px) auto 0;
+  border-radius: 10px;
+  z-index: 6;
+  
+  
+}

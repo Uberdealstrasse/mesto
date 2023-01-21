@@ -1,0 +1,26 @@
+.elements {
+  max-width: 880px;
+  margin: min(max(36px, calc((36/320*100)*1vw)), 51px) auto 0;
+  padding: 0 min(max(19px, calc((19/320*100)*1vw)), 48px) 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  column-gap: 17px;
+  row-gap: 20px;
+  
+}
+
+
+@media screen and (max-width: 768px) {
+  .elements {
+    padding-left: min(max(19px, calc((19/320*100)*1%)), 39px);
+    padding-right: min(max(19px, calc((19/320*100)*1%)), 39px);
+
+
+
+  }
+
+
+
+
+}

@@ -1,0 +1,26 @@
+.profile__info {
+  display: grid;
+  grid-template-columns: minmax(min-content, 294px);
+  white-space: wrap;
+  justify-content: space-between;
+  align-content: center;
+  margin-right: auto;
+  column-gap: 0;
+  
+  position: relative;
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    justify-content: center;
+    margin: 27px 0 0 0;
+    grid-template-columns: minmax(min-content, min(max(189px, calc((189/320*100)*1vw)), 295px));
+    /* gap: 0; */
+    
+    
+  }
+
+  
+}

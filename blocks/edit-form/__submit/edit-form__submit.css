@@ -1,0 +1,21 @@
+.edit-form__submit {
+  background-color: black;
+  color: white;
+  width: min(max(238px, calc((238/320*100)*1vw)), 358px);
+  height: min(max(46px, calc((46/320*100)*1vw)), 50px);
+  margin: min(max(45px, calc((45/320*100)*1vw)), 48px) auto min(max(25px, calc((25/320*100)*1vw)), 37px);
+  border-radius: 2px;
+  font-size: min(max(14px, calc((14/320*100)*1vw)), 18px);
+  line-height: 1.22;
+  border: 0;
+  
+}
+
+.edit-form__submit:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.edit-form__submit:active {
+  opacity: 1;
+}

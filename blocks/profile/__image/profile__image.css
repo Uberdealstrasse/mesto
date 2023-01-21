@@ -1,0 +1,7 @@
+.profile__image {
+  object-fit: fill;
+  height: min(max(18px, calc((18/320*100)*1vw)), 24px);
+  width: min(max(18px, calc((18/320*100)*1vw)), 24px);
+  margin: 0;
+  padding: 0;
+}

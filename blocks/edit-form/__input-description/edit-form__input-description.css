@@ -1,0 +1,19 @@
+.edit-form__input-description {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  width: min(max(238px, calc((238/320*100)*1vw)), 358px);
+  margin: 20px auto 0;
+  height: 36px;
+  padding: 0;
+  padding-left: 2px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.edit-form__input-description:focus {
+  box-shadow: 1px 1px 1px 1px rgba(0, 195, 255, .3);
+  border: white;
+  outline: 2px solid rgb(0, 195, 255);
+  border-radius: 2px;
+}
