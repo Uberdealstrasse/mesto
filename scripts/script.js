@@ -9,7 +9,7 @@ let profileDescription = document.querySelector('.profile__description');
 
 // функция открытия окна
 function popUpOpen() {
-  popUp.classList.add('popup__container_active');
+  popUp.classList.add('popup_opened');
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
 }
@@ -19,7 +19,7 @@ buttonEdit.addEventListener('click', popUpOpen);
 
 // функция закрытия окна
 function popUpClose() {
-  popUp.classList.remove('popup__container_active');
+  popUp.classList.remove('popup_opened');
 }
 
 buttonClose.addEventListener('click', popUpClose);
@@ -40,6 +40,23 @@ function handleFormSubmit (evt) {
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit); 
 
+
+
+
+
+
+
+
+
+// let likeButtons = document.querySelectorAll(".element__like-button");
+
+
+// likeButtons.forEach((likeButtons) => {
+//   likeButtons.addEventListener("click", () => {
+//     likeButtons.classList.toggle("element__like-button_active");
+//     likeButtons.classList.toggle("element__like-button_hover");
+//   });
+// });
 
 
 

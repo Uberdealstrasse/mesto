@@ -4,7 +4,7 @@
   font-size: min(max(27px, calc((27/320*100)*1vw)), 42px);
   font-weight: 500;
   line-height: 48px;
-  max-width: 320px;
+  max-width: 294px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -17,11 +17,12 @@
     margin-right: auto;
     text-align: center;
     width: 100%;
-    line-height: 33px;
+    line-height: min(max(33px, calc((33/320*100)*1vw)), 48px);
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    
   }
 
   

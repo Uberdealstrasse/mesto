@@ -14,6 +14,6 @@
   .profile__info {
     justify-content: center;
     margin: 27px 0 0 0;
-    grid-template-columns: 1fr minmax(min-content, min(max(189px, calc((189/320*100)*1vw)), 295px)) 1fr; 
+    grid-template-columns: 1fr minmax(auto, min(max(189px, calc((189/320*100)*1vw)), 294px)) 1fr; 
   }
 }
