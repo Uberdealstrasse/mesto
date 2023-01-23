@@ -3,28 +3,37 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="./pages/index.css" />
-		<link rel="stylesheet" href="./style.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>MESTO</title>
 	</head>
 
 	<body>
 		<div class="page dark-theme">
-			<div class="popup-container hidden">
+			<div class="popup__container">
 				<div class="edit-form">
-					<button class="edit-form__close hover"></button>
+					<button type="reset" class="edit-form__close hover"></button>
 					<h2 class="edit-form__title">Редактировать профиль</h2>
-					<input
-						class="edit-form__input-name"
-						type="text"
-						value="Жак-Ив Кусто"
-					/>
-					<input
-						class="edit-form__input-description"
-						type="text"
-						value="Исследователь океана"
-					/>
-					<input class="edit-form__submit" type="submit" value="Сохранить" />
+					<form class="edit-form__form" action="">
+						<input
+							class="edit-form__input edit-form__input_info_name"
+							type="text"
+							value=""
+							placeholder="Ваше имя"
+							required
+							name="input-name"
+						/>
+						<input
+							class="edit-form__input edit-form__input_info_description"
+							type="text"
+							placeholder="Ваш род деятельности"
+							required
+							value=""
+							name="input-description"
+						/>
+						<button class="edit-form__submit" type="submit" name="save">
+							Сохранить
+						</button>
+					</form>
 				</div>
 			</div>
 
@@ -43,19 +52,19 @@
 					/>
 					<div class="profile__info">
 						<h1 class="profile__name">Жак-Ив Кусто</h1>
-						<button class="profile__edit-button hover">
+						<button type="button" class="profile__edit-button hover">
 							<img
 								class="profile__image"
-								src="./images/edit-button.png"
+								src="./images/edit-button.svg"
 								alt="Кнопка «button»"
 							/>
 						</button>
 						<p class="profile__description">Исследователь океана</p>
 					</div>
-					<button class="profile__add-button hover">
+					<button type="button" class="profile__add-button hover">
 						<img
 							class="profile__plus"
-							src="./images/add-button.png"
+							src="./images/add-button.svg"
 							alt="Кнопка «button»"
 						/>
 					</button>
@@ -63,7 +72,7 @@
 
 				<!-- ELEMENTS -->
 				<section class="elements" aria-label="фото-сетка">
-					<div class="element">
+					<article class="element">
 						<img
 							src="./images/karachaevsk.jpg"
 							alt="Карачаевск"
@@ -71,11 +80,11 @@
 						/>
 						<div class="element__info">
 							<h2 class="element__title">Карачаевск</h2>
-							<button class="element__like-button hover"></button>
+							<button type="button" class="element__like-button element__like-button_hover"></button>
 						</div>
-					</div>
+					</article>
 
-					<div class="element">
+					<article class="element">
 						<img
 							src="./images/elbrus.jpg"
 							alt="Гора Эльбрус"
@@ -83,11 +92,11 @@
 						/>
 						<div class="element__info">
 							<h2 class="element__title">Гора Эльбрус</h2>
-							<button class="element__like-button hover"></button>
+							<button type="button" class="element__like-button element__like-button_hover"></button>
 						</div>
-					</div>
+					</article>
 
-					<div class="element">
+					<article class="element">
 						<img
 							src="./images/dombai.jpg"
 							alt="Домбай"
@@ -95,11 +104,11 @@
 						/>
 						<div class="element__info">
 							<h2 class="element__title">Домбай</h2>
-							<button class="element__like-button hover"></button>
+							<button type="button" class="element__like-button element__like-button_hover"></button>
 						</div>
-					</div>
+					</article>
 
-					<div class="element">
+					<article class="element">
 						<img
 							src="./images/elbrus.jpg"
 							alt="Гора Эльбрус"
@@ -107,11 +116,11 @@
 						/>
 						<div class="element__info">
 							<h2 class="element__title">Гора Эльбрус</h2>
-							<button class="element__like-button hover"></button>
+							<button type="button" class="element__like-button element__like-button_hover"></button>
 						</div>
-					</div>
+					</article>
 
-					<div class="element">
+					<article class="element">
 						<img
 							src="./images/dombai.jpg"
 							alt="Домбай"
@@ -119,11 +128,11 @@
 						/>
 						<div class="element__info">
 							<h2 class="element__title">Домбай</h2>
-							<button class="element__like-button hover"></button>
+							<button type="button" class="element__like-button element__like-button_hover"></button>
 						</div>
-					</div>
+					</article>
 
-					<div class="element">
+					<article class="element">
 						<img
 							src="./images/karachaevsk.jpg"
 							alt="Карачаевск"
@@ -131,9 +140,9 @@
 						/>
 						<div class="element__info">
 							<h2 class="element__title">Карачаево-Черкесия</h2>
-							<button class="element__like-button hover"></button>
+							<button type="button" class="element__like-button element__like-button_hover"></button>
 						</div>
-					</div>
+					</article>
 				</section>
 			</main>
 
@@ -141,8 +150,8 @@
 			<footer class="footer">
 				<p class="footer__copyright">&copy; 2022 Mesto Russia</p>
 			</footer>
-
-			<script src="./script.js"></script>
 		</div>
+		<script src="./scripts/script.js"></script>
+		<script src="./scripts/likes.js"></script>
 	</body>
 </html>

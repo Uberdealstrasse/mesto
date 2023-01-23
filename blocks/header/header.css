@@ -2,9 +2,7 @@
   max-width: 880px;
   justify-content: end;
   display: flex;
-  /* margin: 0 auto min(max(48px, calc((48/1024*100)*1vw)), 56px); */
   margin: 0 auto 40px;
-  /* padding: 45px min(max(19px, calc((19/320*100)*1vw)), 48px) 0; */
   padding: min(max(28px, calc((28/320*100)*1vw)), 45px) 0 0;
   border-bottom: 1px solid rgba(84, 84, 84, .7);
   

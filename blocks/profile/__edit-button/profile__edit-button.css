@@ -1,11 +1,10 @@
 .profile__edit-button {
-  position: absolute;
   background: 0;
   padding: 0;
   align-self: flex-start;
   justify-self: flex-end;
-  margin-right: -43px;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-left: 18px;
   border: 0;
   height: min(max(18px, calc((18/320*100)*1vw)), 24px);
   width: min(max(18px, calc((18/320*100)*1vw)), 24px);
@@ -16,15 +15,16 @@
 
 @media screen and (max-width: 768px) {
   .profile__edit-button {
-    position: absolute;
-    margin-right: auto;
-    justify-self: center;
-    margin-left: min(max(226px, calc((226/320*100)*1vw)), 350px);
-        
-    margin-top: min(max(4px, calc((4/320*100)*1vw)), 8px);
     padding: 0;
     line-height: 33px;
-    
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: start;
+    align-self: start;
+    margin-left: 9px;
+    margin-top: min(max(4px, calc((4/320*100)*1vw)), 24px);    
   }
 
   

@@ -1,12 +1,9 @@
 .element {
-  height: 361px;
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
   background-color: white;
   color: black;
-  
   justify-content: space-between;
-  
 }
 

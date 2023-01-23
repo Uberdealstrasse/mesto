@@ -1,0 +1,11 @@
+.element__like-button_hover {
+  opacity: 1;
+  transition: opacity 0.2s linear 0.2s;
+}
+
+
+.element__like-button_hover:hover {
+  opacity: 0.5;
+  transition-delay: 0s;
+  cursor: pointer;
+}
