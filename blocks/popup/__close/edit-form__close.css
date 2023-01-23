@@ -1,4 +1,4 @@
-.edit-form__close {
+.popup__close {
   background: 0;
   border: 0;
   width: min(max(20px, calc((20/550*100)*1vw)), 32px);
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 550px) {
-  .edit-form__close {
+  .popup__close {
     margin-right: 0;
     margin-top: -35px;
     width: 20px;
