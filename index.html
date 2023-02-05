@@ -7,9 +7,10 @@
 		<title>MESTO</title>
 	</head>
 
-	<body>
-		<div class="page dark-theme">
-			<div class="popup">
+	<body class="page">
+		<div>
+			<!-- Edit-form -->
+			<div class="popup popup_type_edit-form">
 				<div class="popup__container">
 					<button
 						type="button"
@@ -38,6 +39,52 @@
 							Сохранить
 						</button>
 					</form>
+				</div>
+			</div>
+
+			<!-- add-form -->
+			<div class="popup popup_type_add-form">
+				<div class="popup__container">
+					<button
+						type="button"
+						class="popup__close hover"
+						name="button-close"
+					></button>
+					<h2 class="popup__title">Новое место</h2>
+					<form class="edit-form add-form" action="...php" name="place-form">
+						<input
+							class="edit-form__input edit-form__input_info_place-name"
+							type="text"
+							value=""
+							placeholder="Название"
+							required
+							name="place-name"
+						/>
+						<input
+							class="edit-form__input edit-form__input_info_place-img"
+							type="text"
+							placeholder="Ссылка на картинку"
+							required
+							value=""
+							name="place-img-link"
+						/>
+						<button class="edit-form__submit" type="submit" name="save">
+							Сохранить
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- photo -->
+			<div class="popup popup_type_photo">
+				<div class="popup__container">
+					<button
+						type="button"
+						class="popup__close hover"
+						name="button-close"
+					></button>
+					<img class="popup__place-img" alt="Фото" src="">
+					<h2 class="popup__place-name"></h2>
 				</div>
 			</div>
 
@@ -75,103 +122,7 @@
 				</section>
 
 				<!-- ELEMENTS -->
-				<section class="elements" aria-label="фото-сетка">
-					<article class="element">
-						<img
-							src="./images/karachaevsk.jpg"
-							alt="Карачаевск"
-							class="element__image"
-						/>
-						<div class="element__info">
-							<h2 class="element__title">Карачаевск</h2>
-							<button
-								type="button"
-								class="element__like-button"
-								name="like"
-							></button>
-						</div>
-					</article>
-
-					<article class="element">
-						<img
-							src="./images/elbrus.jpg"
-							alt="Гора Эльбрус"
-							class="element__image"
-						/>
-						<div class="element__info">
-							<h2 class="element__title">Гора Эльбрус</h2>
-							<button
-								type="button"
-								class="element__like-button"
-								name="like"
-							></button>
-						</div>
-					</article>
-
-					<article class="element">
-						<img
-							src="./images/dombai.jpg"
-							alt="Домбай"
-							class="element__image"
-						/>
-						<div class="element__info">
-							<h2 class="element__title">Домбай</h2>
-							<button
-								type="button"
-								class="element__like-button"
-								name="like"
-							></button>
-						</div>
-					</article>
-
-					<article class="element">
-						<img
-							src="./images/elbrus.jpg"
-							alt="Гора Эльбрус"
-							class="element__image"
-						/>
-						<div class="element__info">
-							<h2 class="element__title">Гора Эльбрус</h2>
-							<button
-								type="button"
-								class="element__like-button"
-								name="like"
-							></button>
-						</div>
-					</article>
-
-					<article class="element">
-						<img
-							src="./images/dombai.jpg"
-							alt="Домбай"
-							class="element__image"
-						/>
-						<div class="element__info">
-							<h2 class="element__title">Домбай</h2>
-							<button
-								type="button"
-								class="element__like-button"
-								name="like"
-							></button>
-						</div>
-					</article>
-
-					<article class="element">
-						<img
-							src="./images/karachaevsk.jpg"
-							alt="Карачаевск"
-							class="element__image"
-						/>
-						<div class="element__info">
-							<h2 class="element__title">Карачаево-Черкесия</h2>
-							<button
-								type="button"
-								class="element__like-button"
-								name="like"
-							></button>
-						</div>
-					</article>
-				</section>
+				<section class="elements" aria-label="фото-сетка"></section>
 			</main>
 
 			<!-- FOOTER -->
@@ -179,6 +130,26 @@
 				<p class="footer__copyright">&copy; 2022 Mesto Russia</p>
 			</footer>
 		</div>
+		<!-- Template -->
+		<template id="element-template" class="element-template">
+			<article class="element">
+				<button
+					type="button"
+					class="element__trash hover"
+					name="trash"
+				></button>
+				<img class="element__image" />
+				<div class="element__info">
+					<h2 class="element__title"></h2>
+					<button
+						type="button"
+						class="element__like-button"
+						name="like"
+					></button>
+				</div>
+			</article>
+		</template>
+
 		<script src="./scripts/script.js"></script>
 	</body>
 </html>

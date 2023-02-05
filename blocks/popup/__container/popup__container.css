@@ -10,3 +10,11 @@
   align-self: center;
   align-content: space-between;
 }
+
+
+.popup_type_photo .popup__container {
+  background: none;
+  max-width: 75vw;
+  align-items: center;
+  width: auto;
+}

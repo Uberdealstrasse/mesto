@@ -1,0 +1,11 @@
+.element__trash {
+  background: 0;
+  border: 0;
+  background-image: url(../../../images/trash-can.svg);
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  border: 0;
+  padding: 0;
+  margin: 20px 244px;
+}
