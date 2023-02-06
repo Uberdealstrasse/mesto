@@ -4,13 +4,11 @@ const buttonAdd = document.querySelector('.profile__add-button');
 
 
 // попапы
-const popUp = document.querySelector('.popup');
 const editForm = document.querySelector('.popup_type_edit-form');
 const addForm = document.querySelector('.popup_type_add-form');
 const popupPhoto = document.querySelector('.popup_type_photo');
-const editFormCloseButton = editForm.querySelector('.popup__close');
-const addFormCloseButton = addForm.querySelector('.popup__close');
-const popupPhotoCloseButton = popupPhoto.querySelector('.popup__close');
+const closeButtons = document.querySelectorAll('.popup__close');
+
 
 
 
@@ -35,65 +33,57 @@ const elementTemplate = document.querySelector(".element-template").content;
 
 
 // ФУНКЦИИ ОТКРЫТИЯ ПОПАПОВ
-function popUpOpen(popup) {
+function openPopup(popup) {
   popup.classList.add('popup_opened');
 
 }
 
 // Открытие формы редактирования профиля
-function editFormOpen() {
-  popUpOpen(editForm);
+function openEditForm() {
+  openPopup(editForm);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
 
 }
 
 // Открытие формы добавления карточек
-function addFormOpen() {
-  popUpOpen(addForm);
+function openAddForm() {
+  openPopup(addForm);
 }
-
-// Открытие фотографии с карточки
-// function popupPhotoOpen() {
-  
-// }
 
 
 // привязка функций открытия к кнопкам
-buttonEdit.addEventListener('click', editFormOpen);
-buttonAdd.addEventListener('click', addFormOpen);
+buttonEdit.addEventListener('click', openEditForm);
+buttonAdd.addEventListener('click', openAddForm);
 
 
 // ФУНКЦИИ ЗАКРЫТИЯ ПОПАПОВ
-function popUpClose(popup) {
+function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
 // Закрытие формы редактирования профиля
-function editFormClose() {
-  popUpClose(editForm);
+function closeEditForm() {
+  closePopup(editForm);
 }
 
 // Закрытие формы добавления карточек
-function addFormClose() {
-  popUpClose(addForm);
-  placeName.value = '';
-  placeImg.value = '';
+function closeAddForm() {
+  closePopup(addForm);
+  document.querySelector('.add-form').reset();
 }
 
 // Закрытие формы добавления карточек
-function popupPhotoClose() {
-  popUpClose(popupPhoto);
+function closePopupPhoto() {
+  closePopup(popupPhoto);
   
 }
 
-
-
 // привязка функций закрытия к кнопкам
-editFormCloseButton.addEventListener('click', editFormClose);
-addFormCloseButton.addEventListener('click', addFormClose);
-popupPhotoCloseButton.addEventListener('click', popupPhotoClose);
-
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
 
 
 // ФУНКЦИИ ПРИМЕНЕНИЯ ДАННЫХ
@@ -103,14 +93,14 @@ function editFormSubmit (evt) {
     evt.preventDefault(); 
     profileName.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
-    editFormClose()
+    closeEditForm()
 }
 editForm.addEventListener('submit', editFormSubmit); 
 
 
 
 // Карточки
-let initialCards = [
+const initialCards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -138,76 +128,60 @@ let initialCards = [
   
 ]; 
 
-initialCards = initialCards.reverse();
-
-
 
 // передача информации с массива
-let elementInfo = initialCards.map(function (el) {
+const cardInfo = initialCards.map(function (el) {
   return {
     name: el.name,
     link: el.link
   };
 });
-console.log(elementInfo);
+// console.log(cardInfo);
 
 
-// формирование карточек
-function element({name, link}) {
-  const place = elementTemplate.querySelector(".element").cloneNode(true);
-  place.querySelector(".element__title").textContent = name;
-  place.querySelector(".element__image").src = link;
-  place.querySelector(".element__image").alt = name;
-  elements.prepend(place);
+function createCard(item) {
+  // формирование карточки
+  const card = elementTemplate.querySelector(".element").cloneNode(true);
+  card.querySelector('.element__image').src = item.link;
+  card.querySelector('.element__image').alt = item.name;
+  card.querySelector(".element__title").textContent = item.name;
   // лайки в карточках
-  const like = place.querySelector('.element__like-button');
+  const like = card.querySelector('.element__like-button');
   like.addEventListener('click', function() {like.classList.toggle('element__like-button_active')});
   // удаление карточек
-  const trashCan = place.querySelector('.element__trash');
-  trashCan.addEventListener('click', function() {place.remove()});
+  const trashCan = card.querySelector('.element__trash');
+  trashCan.addEventListener('click', function() {card.remove()});
   // просмотр фотографии
-  const placeImg = place.querySelector('.element__image');
-  placeImg.addEventListener('click', function() {
-    popupPhotoImg.src = link;
-    popupPhotoImg.alt = name;
-    popupPhotoName.textContent = name;
-    popUpOpen(popupPhoto);
+  const cardImg = card.querySelector('.element__image');
+  cardImg.addEventListener('click', function() {
+    popupPhotoImg.src = item.link;
+    popupPhotoImg.alt = item.name;
+    popupPhotoName.textContent = item.name;
+    openPopup(popupPhoto);
   });
- 
+
+  return card
 }
 
-// отображение карточек на странице
-function showElement() {
-  elementInfo.forEach(element);
-}
-showElement();
 
+function addCards(item) {
+  const cardElement = createCard(item);
+	elements.append(cardElement);
+} 
+
+// добавление карточек на страницу
+initialCards.forEach(addCards);
+	
 
 // добавление новых карточек
 function addFormSubmit (evt) {
   evt.preventDefault();  
-  let addCards = [];
-  addCards.push({'name': placeName.value, 'link': placeImg.value});
-  newCard = addCards.pop();
-  // внесение данный в основной массив (на всякий случай);
-  initialCards = (initialCards.slice().reverse().concat(newCard)).reverse();
-  
-  addCards = [newCard];
-  
-  let newElementInfo = addCards.map(function (el) {
-    return {
-      name: el.name,
-      link: el.link
-    };
-  });
-     
-  
-  function showElement() {
-    newElementInfo.forEach(element);
+  const card ={
+    name: placeName.value,
+    link: placeImg.value
   }
-  
-  showElement();  
-  addFormClose()
+  elements.prepend(createCard(card));
+  closeAddForm();
 }
 
 addForm.addEventListener('submit', addFormSubmit);
