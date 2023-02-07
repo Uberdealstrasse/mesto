@@ -6,6 +6,7 @@ const buttonAdd = document.querySelector('.profile__add-button');
 // попапы
 const editForm = document.querySelector('.popup_type_edit-form');
 const addForm = document.querySelector('.popup_type_add-form');
+const newCardForm = document.querySelector('.add-form')
 const popupPhoto = document.querySelector('.popup_type_photo');
 const closeButtons = document.querySelectorAll('.popup__close');
 
@@ -30,6 +31,34 @@ const placeImg = document.querySelector('.edit-form__input_info_place-img');
 // карточки
 const elements = document.querySelector(".elements");
 const elementTemplate = document.querySelector(".element-template").content;
+
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  },
+  
+]; 
 
 
 // ФУНКЦИИ ОТКРЫТИЯ ПОПАПОВ
@@ -68,16 +97,16 @@ function closeEditForm() {
 }
 
 // Закрытие формы добавления карточек
-function closeAddForm() {
+function closeAddForm(evt) {
   closePopup(addForm);
-  document.querySelector('.add-form').reset();
-}
+  evt.target.reset();
+} 
 
 // Закрытие формы добавления карточек
-function closePopupPhoto() {
-  closePopup(popupPhoto);
-  
-}
+function closeAddForm() {
+  closePopup(addForm);
+  newCardForm.reset();
+} 
 
 // привязка функций закрытия к кнопкам
 closeButtons.forEach((button) => {
@@ -97,36 +126,6 @@ function editFormSubmit (evt) {
 }
 editForm.addEventListener('submit', editFormSubmit); 
 
-
-
-// Карточки
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  },
-  
-]; 
 
 
 // передача информации с массива
