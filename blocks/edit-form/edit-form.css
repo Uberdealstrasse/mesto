@@ -3,6 +3,7 @@
   max-width: min(max(238px, calc((238/320*100)*1vw)), 358px);
   margin-top: 38px;
   margin-bottom: min(max(25px, calc((25/320*100)*1vw)), 37px);
+  position: relative;
 }
 
 @media screen and (max-width: 550px) {
