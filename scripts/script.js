@@ -57,15 +57,45 @@ const initialCards = [
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   },
-  
-]; 
+
+];
+
+
+// const validationData = {
+//   formSelector: '.edit-form',
+//   inputSelector: '.edit-form__input',
+//   submitButtonSelector: '.edit-form__submit',
+//   inactiveButtonClass: 'edit-form__submit_disabled',
+//   inputErrorClass: 'edit-form__input_type_error',
+//   errorClass: 'edit-form__input-error_active'
+// }
 
 
 // ФУНКЦИИ ОТКРЫТИЯ ПОПАПОВ
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 
+  // привязка функций закрытия к событиям
+  document.addEventListener('keydown', closeKey);
+  document.addEventListener('mousedown', overlayClick);
+
 }
+
+// функция закрытия попапа на клавишу esc 
+function closeKey(evt) {
+  const openPopup = document.querySelector('.popup_opened');
+  if (openPopup && evt.key === 'Escape') {
+    closePopup(openPopup);
+  }
+}
+// функция закрытия попапа при клике на оверлэй 
+function overlayClick(evt) {
+  const openPopup = document.querySelector('.popup_opened');
+  if (openPopup && evt.target === openPopup) {
+    closePopup(openPopup);
+  }
+}
+
 
 // Открытие формы редактирования профиля
 function openEditForm() {
@@ -100,13 +130,13 @@ function closeEditForm() {
 function closeAddForm(evt) {
   closePopup(addForm);
   evt.target.reset();
-} 
+}
 
 // Закрытие формы добавления карточек
 function closeAddForm() {
   closePopup(addForm);
   newCardForm.reset();
-} 
+}
 
 // привязка функций закрытия к кнопкам
 closeButtons.forEach((button) => {
@@ -118,13 +148,13 @@ closeButtons.forEach((button) => {
 // ФУНКЦИИ ПРИМЕНЕНИЯ ДАННЫХ
 
 // применение редактирования профиля
-function editFormSubmit (evt) {
-    evt.preventDefault(); 
-    profileName.textContent = nameInput.value;
-    profileDescription.textContent = jobInput.value;
-    closeEditForm()
+function editFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = jobInput.value;
+  closeEditForm()
 }
-editForm.addEventListener('submit', editFormSubmit); 
+editForm.addEventListener('submit', editFormSubmit);
 
 
 
@@ -146,13 +176,13 @@ function createCard(item) {
   card.querySelector(".element__title").textContent = item.name;
   // лайки в карточках
   const like = card.querySelector('.element__like-button');
-  like.addEventListener('click', function() {like.classList.toggle('element__like-button_active')});
+  like.addEventListener('click', function () { like.classList.toggle('element__like-button_active') });
   // удаление карточек
   const trashCan = card.querySelector('.element__trash');
-  trashCan.addEventListener('click', function() {card.remove()});
+  trashCan.addEventListener('click', function () { card.remove() });
   // просмотр фотографии
   const cardImg = card.querySelector('.element__image');
-  cardImg.addEventListener('click', function() {
+  cardImg.addEventListener('click', function () {
     popupPhotoImg.src = item.link;
     popupPhotoImg.alt = item.name;
     popupPhotoName.textContent = item.name;
@@ -165,17 +195,17 @@ function createCard(item) {
 
 function addCards(item) {
   const cardElement = createCard(item);
-	elements.append(cardElement);
-} 
+  elements.append(cardElement);
+}
 
 // добавление карточек на страницу
 initialCards.forEach(addCards);
-	
+
 
 // добавление новых карточек
-function addFormSubmit (evt) {
-  evt.preventDefault();  
-  const card ={
+function addFormSubmit(evt) {
+  evt.preventDefault();
+  const card = {
     name: placeName.value,
     link: placeImg.value
   }
@@ -184,10 +214,9 @@ function addFormSubmit (evt) {
 }
 
 addForm.addEventListener('submit', addFormSubmit);
- 
 
 
- 
-  
 
- 
+
+
+

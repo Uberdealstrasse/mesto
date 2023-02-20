@@ -57,10 +57,15 @@
 @import url(../blocks/edit-form/edit-form.css);
 @import url(../blocks/edit-form/__input/edit-form__input.css);
 @import url(../blocks/edit-form/__submit/edit-form__submit.css);
+
 @import url(../blocks/popup/__close/edit-form__close.css);
 @import url(../blocks/popup/__place-img/popup__place-img.css);
 @import url(../blocks/popup/__place-name/popup__place-name.css);
 @import url(../blocks/popup/_type/popup_type_photo.css);
+@import url(../blocks/edit-form/__input-error/edit-form__input-error.css);
 
+@import url(../blocks/edit-form/__input/_type/edit-form__input_type_error.css);
+@import url(../blocks/edit-form/__submit/_disabled/edit-form__submit_disabled.css);
+@import url(../blocks/edit-form/__input-error/_active/edit-form__input-error_active.css);
 
 
