@@ -61,15 +61,6 @@ const initialCards = [
 ];
 
 
-// const validationData = {
-//   formSelector: '.edit-form',
-//   inputSelector: '.edit-form__input',
-//   submitButtonSelector: '.edit-form__submit',
-//   inactiveButtonClass: 'edit-form__submit_disabled',
-//   inputErrorClass: 'edit-form__input_type_error',
-//   errorClass: 'edit-form__input-error_active'
-// }
-
 
 // ФУНКЦИИ ОТКРЫТИЯ ПОПАПОВ
 function openPopup(popup) {
@@ -83,8 +74,9 @@ function openPopup(popup) {
 
 // функция закрытия попапа на клавишу esc 
 function closeKey(evt) {
-  const openPopup = document.querySelector('.popup_opened');
-  if (openPopup && evt.key === 'Escape') {
+  
+  if (evt.key === 'Escape') {
+    const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
 }
@@ -108,6 +100,7 @@ function openEditForm() {
 // Открытие формы добавления карточек
 function openAddForm() {
   openPopup(addForm);
+  
 }
 
 
@@ -119,6 +112,10 @@ buttonAdd.addEventListener('click', openAddForm);
 // ФУНКЦИИ ЗАКРЫТИЯ ПОПАПОВ
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+
+  // отвязка функций закрытия к событиям
+  document.removeEventListener('keydown', closeKey);
+  document.removeEventListener('mousedown', overlayClick);
 }
 
 // Закрытие формы редактирования профиля

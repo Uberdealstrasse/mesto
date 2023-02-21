@@ -42,8 +42,10 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (config, inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(config.inactiveButtonClass);
+    buttonElement.setAttribute('disabled', true);
   } else {
     buttonElement.classList.remove(config.inactiveButtonClass);
+    buttonElement.removeAttribute('disabled');
   }
 }
 
@@ -61,6 +63,10 @@ const setEventListeners = (config, formSelector) =>
       checkInputValidity(config, formSelector, inputSelector);
       toggleButtonState(config, inputList, buttonElement)
     })
+  })
+  formSelector.addEventListener('reset', () => { 
+    setTimeout(() => {
+      toggleButtonState(config, inputList, buttonElement) , 0 })
   })
 }
 
